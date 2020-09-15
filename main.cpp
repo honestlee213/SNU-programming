@@ -1,5 +1,5 @@
 // Knight's Tour Problem solving
-// Created by Sehwan Lee(2016-19467) on 2020-09-12. Last updated 2020-09-15 Version.11
+// Created by Sehwan Lee(2016-19467) on 2020-09-12. Last updated 2020-09-15 Version.12
 // Introduction to Data Structures 1st HomeWork.
 
 // For those who are curious about Knight's Tour Problem, see this: http://en.wikipedia.org/wiki/Knight%27s_tour
@@ -136,11 +136,8 @@ void Knight::simpleTour(int *rowMove, int *colMove) {
     }
 
     tempKnight.lastValue(count, rowMove, colMove);    // Needs to fill lastValue because the upper loop does not fill it
-    // When the SimpleTour succeed
-    if (count == N*N)
-        dispBoard(true);        // Print out the success condition
-    else
-        dispBoard(false);       // Print out the failure condition
+    // When the SimpleTour succeed, print out the success condition. Else, print out the failure condition.
+    dispBoard(count == N*N);
 }
 
 // It is complexTour tie-breaking algorithm.
@@ -196,11 +193,8 @@ void Knight::complexTour(int *rowMove, int *colMove) {
     }
 
     tempKnight1.lastValue(count, rowMove, colMove);     // Fills lastValue
-    // When the ComplexTour succeed
-    if (count == N*N)
-        dispBoard(true);        // Print out the success condition
-    else
-        dispBoard(false);       // Print out the failure condition
+    // When the ComplexTour succeed, print out the success condition. Else, print out the failure condition.
+    dispBoard(count == N*N);
 }
 
 // The main starts entire program.
